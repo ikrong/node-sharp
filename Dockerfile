@@ -1,4 +1,5 @@
 FROM alpine:edge
+WORKDIR /usr/var/app/
 
 RUN set -x && \
   apk add --update --no-cache nodejs nodejs-npm
