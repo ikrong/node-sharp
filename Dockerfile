@@ -1,5 +1,4 @@
 FROM alpine:edge
-WORKDIR /app
 
 RUN set -x && \
   apk add --update --no-cache nodejs nodejs-npm
@@ -10,7 +9,6 @@ RUN set -x && \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/main
 
 RUN set -x && \
-  cd /app && \
   npm set progress=false && \
   npm config set depth 0 && \
-  npm i -g sharp 
+  npm i -g sharp --unsafe-perm
